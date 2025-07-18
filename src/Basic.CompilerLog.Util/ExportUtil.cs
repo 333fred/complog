@@ -343,7 +343,7 @@ public sealed partial class ExportUtil
                 if (filePath is null)
                 {
                     using var contentStream = Reader.GetContentStream(rawContent.ContentHash);
-                    filePath = builder.WriteContent(rawContent.OriginalFilePath, contentStream);
+                    filePath = builder.WriteContent(rawContent.NormalizedFilePath, contentStream);
                 }
 
                 commandLineList.Add($@"{prefix}{FormatPathArgument(filePath)}");
@@ -487,7 +487,7 @@ public sealed partial class ExportUtil
 
         foreach (var content in reader.ReadAllRawContent(compilerCall, RawContentKind.AnalyzerConfig))
         {
-            var contentDir = Path.GetDirectoryName(content.OriginalFilePath)!;
+            var contentDir = Path.GetDirectoryName(content.NormalizedFilePath)!;
             if (!sourceRootDir.StartsWith(contentDir, PathUtil.Comparison))
             {
                 continue;

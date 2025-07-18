@@ -2,8 +2,8 @@
   "profiles": {
     "CompilerLogger": {
       "commandName": "Project",
-      "commandLineArgs": "print -c \"C:\\Users\\jaredpar\\Downloads\\out_no_analyzers.binlog\" -p MiddleTier.Provider.csproj",
-      "workingDirectory": "C:\\users\\jaredpar\\temp"
+      "commandLineArgs": "export Build.complog",
+      "workingDirectory": "/home/fred/Downloads/complog_testing/"
     }
   }
 }
